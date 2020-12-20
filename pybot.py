@@ -3,6 +3,7 @@ from pybot_random import choice_command, dice_command
 from pybot_datetime import today_command, now_command, weekday_command
 from pybot_sum import sum_command
 from pybot_bmi import bmi_command
+from pybot_book import book_command
 
 def len_command(command):
     cmd, text = command.split()
@@ -64,6 +65,8 @@ def pybot(command, image=None):
                 response = sum_command(command)
             if 'BMI' in command:
                 response = bmi_command(command)
+            if '書籍' in command:
+                response = book_command(command)
 
         if not response:
             response = '何ヲ言ッテルカ、ワカラナイ'
