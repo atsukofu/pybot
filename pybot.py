@@ -5,6 +5,7 @@ from pybot_sum import sum_command
 from pybot_bmi import bmi_command
 from pybot_book import book_command
 from pybot_markov import markov_command
+from pybot_moji import moji_command
 
 def len_command(command):
     cmd, text = command.split()
@@ -70,6 +71,8 @@ def pybot(command, image=None):
                 response = book_command(command)
             if 'マルコフ' in command:
                 response = markov_command()
+            if '文字' in command:
+                response = moji_command(image)
 
         if not response:
             response = '何ヲ言ッテルカ、ワカラナイ'
